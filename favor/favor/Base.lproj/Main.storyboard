@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J85-16-9v7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z3V-TJ-xxA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Subject Table View Controller-->
+        <!--Home-->
         <scene sceneID="ZM0-Lj-GpC">
             <objects>
                 <tableViewController id="J85-16-9v7" customClass="SubjectTableViewController" customModule="favor" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,8 +21,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIj-Xa-rSv">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fIj-Xa-rSv">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcE-bZ-QP5">
                                             <rect key="frame" x="18" y="39" width="45" height="21"/>
@@ -49,10 +49,52 @@
                             <outlet property="delegate" destination="J85-16-9v7" id="nnG-IE-Hyx"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-icon" selectedImage="home-icon" id="odh-SC-Ji7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q2c-7i-sZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="727" y="-225"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uCM-cy-ncf">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="z3V-TJ-xxA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="5oF-mN-frZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="J85-16-9v7" kind="relationship" relationship="viewControllers" id="GmJ-XO-ENx"/>
+                        <segue destination="PJO-88-Nr2" kind="relationship" relationship="viewControllers" id="UNh-JZ-ZR0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s2m-Jk-T0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="-5" y="96"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="hxT-5l-KlT">
+            <objects>
+                <viewController id="PJO-88-Nr2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vra-Cr-Mre"/>
+                        <viewControllerLayoutGuide type="bottom" id="fM2-uo-K2P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QcY-5B-U3Y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="setting-icon" selectedImage="setting-icon" id="C6M-Tt-W8G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Sh-ho-rgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="721" y="483"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="home-icon" width="25" height="25"/>
+        <image name="setting-icon" width="25" height="25"/>
+    </resources>
 </document>

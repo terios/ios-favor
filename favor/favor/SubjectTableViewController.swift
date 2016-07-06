@@ -7,20 +7,32 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SubjectTableViewController: UITableViewController {
 
-    
     //MARK: attributes
     
     var subjects = [Subject]()
-
+    
     func loadSubjects() {
         let photo1 = UIImage(named: "subject-image")!
         let subject1 = Subject(title: "Travel", background: photo1)
         
         let subject2 = Subject(title: "Music", background: photo1)
         subjects = [subject1!, subject2!]
+   
+    
+    
+    /*let testSubject = SubjectsModel()
+        testSubject.title = "Travel"
+        testSubject.background = "travel background"
+    
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(testSubject)
+        }
+     */   
     }
     
     override func viewDidLoad() {
